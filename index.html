@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entry Form for Base</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Entry Form for Base</h1>
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>LM</th>
+                <th>Base-Mobile Postpaid</th>
+                <th>Base-Mobile Prepaid</th>
+                <th>Base-Fixed</th>
+                <th>Base-Consumer</th>
+                <th>Base-Enterprise</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <select name="LM">
+                        <option value="">Select Local Market</option>
+                        <option value="RO">RO</option>
+                        <option value="IT">IT</option>
+                        <option value="ES">ES</option>
+                        <option value="TR">TR</option>
+                        <option value="DE">DE</option>
+                        <option value="IE">IE</option>
+                        <option value="PT">PT</option>
+                        <option value="UK">UK</option>
+                    </select>
+                </td>
+                <td><input type="number" name="Base-Mobile Postpaid" min="1" oninput="validateInteger(this)"></td>
+                <td><input type="number" name="Base-Mobile Prepaid" min="1" oninput="validateInteger(this)"></td>
+                <td><input type="number" name="Base-Fixed" min="1" oninput="validateInteger(this)"></td>
+                <td><input type="number" name="Base-Consumer" min="1" oninput="validateInteger(this)"></td>
+                <td><input type="number" name="Base-Enterprise" min="1" oninput="validateInteger(this)"></td>
+                <td><button onclick="removeRow(this)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="addRow()">Add Row</button>
+    <br><br>
+    <input type="file" id="fileInput" accept=".xlsx">
+    <button id="submitData" onclick="submitToSharePoint()">Submit to SharePoint</button>
+</body>
+</html>
