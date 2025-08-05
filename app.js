@@ -36,7 +36,7 @@ function submitToSharePoint() {
         };
 
         // AJAX call to SharePoint's REST API
-        fetch('https://vodafone.sharepoint.com/sites/LMSubmissionTestSite/Lists/Test%20Submission/AllItems.aspx/_api/web/lists/getbytitle(\'Test Submission\')/items', {
+        fetch('some link', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -181,4 +181,5 @@ function populateTable(data) {
             <td><button onclick="removeRow(this)">Remove</button></td>
         `;
     });
+
 }
